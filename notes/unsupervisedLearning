@@ -1,0 +1,36 @@
+Clustering properties
+
+    - Richness: for any assignment of objects to the clusters, there is some distance matrix such that clustering scheme produces that scheme. All inputs are valid and anything could be an output. 
+    - scale-invariant: scaling distances by a positive value does not change the clustering
+    - consistency: shrinking intra-cluster distances and expanding intercluster distances does not change the clustering.
+        + if you make things taht are similar more similar and things less similar less similar should not change clustering. 
+
+Single link clustering stops when:
+
+1. n/2 clusters reached
+    - Richness: No. forced to always have n/2 clusters
+    - scale-invariant: Yes. nothing cares about distances -> order not scale
+    - consistency: Yes. Points that are clustered together will stay together if moved closer
+2. clusters are theta units apart
+    - Richness: Yes. Can do any unit, make any # of clusters for any number units
+    - scale-invariant: No. 
+    - consistency: Yes. Looking at distance between the clusters
+3. clusters are theta/w units apart where w = max(d(i,j)) 
+    - Richness: Yes.
+    - scale-invariant: Yes. If you try to make things bigger, maximum distance gets bigger by same amount. Go back to where you were.
+    - consistency: No. Clusters farther apart changes w. 
+
+No tweak can be done to algos to get trifecta. Impossible to derive algorithm that cna give you all three. 
+    - Impossiblity Theorem
+    - Kleinberg
+    - how bad is it?
+
+What have we learned?
+- clustering: the idea
+- connection to compact description
+- algorithms
+    * k-means
+    * SLC (terminates fast)
+    * EM (soft clusters)
+- clustering properties and impossiblity
+
